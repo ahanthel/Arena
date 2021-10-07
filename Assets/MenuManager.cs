@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,6 +8,10 @@ public class MenuManager : MonoBehaviour
 
     [SerializeField] Menu[] menus;
 
+    public MenuManager(Menu[] menus)
+    {
+        this.menus = menus;
+    }
 
     private void Awake()
     {
@@ -15,9 +19,9 @@ public class MenuManager : MonoBehaviour
     }
     public void OpenMenu(string menuName)
     {
-       for(int i=0; i<menus.Length; i++)
+        for (int i = 0; i < menus.Length; i++)
         {
-            if(menus[i].menuName == menuName)
+            if (menus[i].menuName == menuName)
             {
                 OpenMenu(menus[i]);
             }
